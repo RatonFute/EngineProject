@@ -3,7 +3,7 @@
 #include "ComponentArray.hpp"
 #include "Type.hpp"
 #include <memory>
-#include <unordered_map>b
+#include <unordered_map>
 
 class ComponentManager
 {
