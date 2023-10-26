@@ -1,10 +1,8 @@
 #pragma once
-
-
-#include <vector>
+#include "Vec3.hpp"
 
 struct RigidBody
 {
-	std::vector<float> velocity;
-	std::vector<float> acceleration;
+	Vec3 velocity;
+	Vec3 acceleration;
 };

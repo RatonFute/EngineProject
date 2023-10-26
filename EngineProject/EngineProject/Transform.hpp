@@ -1,11 +1,9 @@
 #pragma once
-
-
-#include <vector>
+#include "Vec3.hpp"
 
 struct Transform
 {
-	std::vector<float> position;
-	std::vector<float> rotation;
-	std::vector<float> scale;
+	Vec3 position;
+	Vec3 rotation;
+	Vec3 scale;
 };
