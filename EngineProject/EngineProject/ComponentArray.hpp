@@ -15,7 +15,7 @@ template<typename T>
 class ComponentArray : public IComponentArray
 {
 public:
-	void insertComponent(Entity entity, T component)
+	void InsertData(Entity entity, T component)
 	{
 		assert(mEntityToIndexMap.find(entity) == mEntityToIndexMap.end() && "Component added to same entity more than once.");
 
@@ -25,10 +25,10 @@ public:
 		mComponentArray[newIndex] = component;
 		++mSize;
 	}
-	void removeData(Entity entity)
+	void RemoveData(Entity entity)
 	{
-		assert(mEntityToIndexMap.find(entity) != mEntityToIndexMap.end() && "data's entity does not exist")
-			size_t indexOfRemovedEntity = mEntityToIndexMap[entity];
+		assert(mEntityToIndexMap.find(entity) != mEntityToIndexMap.end() && "data's entity does not exist");
+		size_t indexOfRemovedEntity = mEntityToIndexMap[entity];
 		size_t indexOfLastEntity = mSize - 1;
 
 		Entity entityOfLastElement = mIndexToEntityMap[indexOfLastEntity];

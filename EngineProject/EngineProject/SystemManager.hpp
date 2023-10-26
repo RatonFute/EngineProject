@@ -10,9 +10,10 @@ public:
 	std::shared_ptr<T> RegisterSystem()
 	{
 		const char* typeName = typeid(T).name();
+		assert(mSystems.find(typeName) == mSystems.end() && "Registering system more than once.");
 
 		auto system = std::make_shared<T>();
-		mSignatures.insert({ typeName,system });
+		mSystems.insert({ typeName,system });
 		return system;
 
 	}
