@@ -1,3 +1,4 @@
+#pragma once
 #include "ComponentManager.hpp"
 #include "EntityManager.hpp"
 #include "SystemManager.hpp"
@@ -47,7 +48,7 @@ public:
 	template<typename T>
 	T& GetComponent(Entity entity)
 	{
-		mComponentManager->GetComponent<T>(entity);
+		return mComponentManager->GetComponent<T>(entity);
 	}
 	template<typename T>
 	ComponentType GetComponentType()

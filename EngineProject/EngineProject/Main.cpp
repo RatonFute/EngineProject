@@ -4,7 +4,8 @@
 #include "PhysicsSystem.hpp"
 #include <chrono>
 #include <random>
-extern Coordinator gCoordinator;
+
+Coordinator gCoordinator;
 
 int main()
 {

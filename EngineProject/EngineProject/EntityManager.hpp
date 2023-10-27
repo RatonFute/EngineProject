@@ -1,3 +1,4 @@
+#pragma once
 #include "Type.hpp"
 #include <queue>
 #include <cassert>
