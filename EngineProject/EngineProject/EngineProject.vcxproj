@@ -127,11 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ComponentArray.hpp" />
+    <ClInclude Include="ComponentManager.hpp" />
+    <ClInclude Include="Coordinator.hpp" />
+    <ClInclude Include="EntityManager.hpp" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="System.hpp" />
+    <ClInclude Include="Type.hpp" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="RigidBody.hpp" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Transform.hpp" />
+    <ClInclude Include="Vec3.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="EngineProject.rc" />
@@ -142,7 +149,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="window.cpp" />
+    <ClCompile Include="PhysicsSystem.cpp" />
+    <ClCompile Include="PhysicsSystem.hpp" />
+    <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="SystemManager.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
