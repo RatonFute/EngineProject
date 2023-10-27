@@ -1,7 +1,4 @@
-#pragma comment (lib, "d3d12.lib")
 #include <Windows.h>
-#include <d3d12.h>
-
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -15,18 +12,19 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
+
 int CALLBACK WinMain(
 	HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
-	LPSTR	lpCmdLine,
-	int		nCmdShow)
+	LPSTR lpCmdLine,
+	int nCmdShow)
+
 {
 	const auto pClassName = L"fenetreDeMerde";
-	//register window class
-	WNDCLASSEX wc = { 0 };
-	wc.cbSize = sizeof(wc);
+
+	WNDCLASSEX wc = { sizeof(wc) };
 	wc.style = CS_OWNDC;
-	wc.lpfnWndProc = DefWindowProc;
+	wc.lpfnWndProc = WndProc;
 	wc.cbClsExtra = 0;
 	wc.cbWndExtra = 0;
 	wc.hInstance = hInstance;
@@ -37,30 +35,31 @@ int CALLBACK WinMain(
 	wc.lpszClassName = pClassName;
 	wc.hIconSm = nullptr;
 	RegisterClassEx(&wc);
+
 	//create window instance
+
 	HWND hWnd = CreateWindowExW(
-		0, pClassName,
+		0,
+		pClassName,
 		L"Je vais tout casser",
 		WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,
-		200, 200, 980, 720,
-		nullptr, nullptr, hInstance, nullptr
+		CW_USEDEFAULT,
+		CW_USEDEFAULT,
+		980,
+		720,
+		nullptr, //parent window
+		nullptr, //menus
+		hInstance,
+		nullptr
 	);
-	//HWND pWnd = CreateWindowExW(
-	//	0, pClassName,
-	//	L"Popup",
-	//	WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,
-	//	400, 350, 640, 480,
-	//	nullptr, nullptr, hInstance, nullptr
-	//);
+
 	//show the window
 	ShowWindow(hWnd, SW_SHOW);
-	UpdateWindow(hWnd);
-	//ShowWindow(pWnd, SW_SHOW);
 
 	//message pump
 	MSG msg;
 	BOOL gResult;
-	while (gResult = GetMessage(&msg, 0, 0, 0) > 0)
+	while ((gResult = GetMessage(&msg, nullptr,0,0) > 0))
 	{
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
@@ -74,4 +73,3 @@ int CALLBACK WinMain(
 		return msg.wParam;
 	}
 }
-
