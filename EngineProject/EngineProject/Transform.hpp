@@ -4,12 +4,18 @@ using namespace DirectX;
 class Transform
 {
 public:
-	float m_xPos, m_yPos, m_zPos,m_roll,m_pitch,m_yaw = 0;
-	float m_xScale, m_yScale, m_zScale = 1;
+	XMVECTOR Scale;
+	XMVECTOR Position;
+	XMVECTOR Rotation;
 
-	XMVECTOR m_vSca;
-	XMVECTOR m_vPos;
-	XMVECTOR m_vRot;
+	void UpdateMatrix();
+	void Rotate(float yaw, float pitch, float roll);
+	void RotateYaw(float yaw);
+	void RotatePitch(float pitch);
+	void RotateRoll(float roll);
+private:
+	float m_xPos, m_yPos, m_zPos, m_roll, m_pitch, m_yaw = 0;
+	float m_xScale, m_yScale, m_zScale = 1;
 
 	XMVECTOR m_vDir;
 	XMVECTOR m_vRight;
@@ -17,10 +23,4 @@ public:
 
 	XMMATRIX m_mRot;
 	XMMATRIX m_matrix;
-
-	void UpdateMatrix();
-	void Rotate(float yaw, float pitch, float roll);
-	void RotateYaw(float yaw);
-	void RotatePitch(float pitch);
-	void RotateRoll(float roll);
 };

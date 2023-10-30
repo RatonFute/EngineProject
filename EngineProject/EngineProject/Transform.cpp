@@ -12,10 +12,10 @@ void Transform::UpdateMatrix()
 	quat = XMQuaternionRotationAxis(m_vUp, m_yaw);
 	quatRot *= quat;
 
-	m_vRot *= quatRot;
+	Rotation *= quatRot;
 
 	XMMATRIX matRot;
-	matRot = XMMatrixRotationQuaternion(m_vRot);
+	matRot = XMMatrixRotationQuaternion(Rotation);
 	
 	matRot = XMMatrixTranspose(matRot);
 	XMFLOAT3X3 f4x4Rot;

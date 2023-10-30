@@ -4,7 +4,8 @@
 #include "PhysicsSystem.hpp"
 #include <chrono>
 #include <random>
-
+#include <DirectXMath.h>
+using namespace DirectX;
 Coordinator gCoordinator;
 
 int main()
@@ -33,15 +34,13 @@ int main()
 	{
 		entity = gCoordinator.CreateEntity();
 		RigidBody entityRB;
-		entityRB.velocity = Vec3(0.0f, 0.0f, 0.0f);
-		entityRB.acceleration = Vec3(0.0f, 0.0f, 0.0f);
+		entityRB.velocity = XMVectorSet(0, 0, 0, 0);
 		Transform entityTransform;
-		entityTransform.position = Vec3(randPosition(generator), randPosition(generator), randPosition(generator));
-		entityTransform.rotation = Vec3(randRotation(generator), randRotation(generator), randRotation(generator));
-		entityTransform.scale = Vec3(1, 1, 1);
-		gCoordinator.AddComponent(entity,entityRB);
+		entityTransform.Position = XMVectorSet(0, 0, 0, 0);
+		entityTransform.Rotation = XMVectorSet(0, 0, 0, 0);
+		entityTransform.Scale = XMVectorSet(1, 1, 1, 0);
+		gCoordinator.AddComponent(entity, entityRB);
 		gCoordinator.AddComponent(entity, entityTransform);
-
 	}
 	while (!quit)
 	{

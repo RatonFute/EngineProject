@@ -1,8 +1,9 @@
 #pragma once
-#include "Vec3.hpp"
+#include <DirectXMath.h>
+using namespace DirectX;
 
 struct RigidBody
 {
-	Vec3 velocity;
-	Vec3 acceleration;
+	XMVECTOR velocity;
+	float mass;
 };

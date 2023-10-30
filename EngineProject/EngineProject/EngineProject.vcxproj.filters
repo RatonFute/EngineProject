@@ -48,11 +48,20 @@
     <ClInclude Include="Vec3.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.hpp">
-      <Filter>Fichiers d%27en-tête\Component</Filter>
-    </ClInclude>
     <ClInclude Include="RigidBody.hpp">
       <Filter>Fichiers d%27en-tête\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dx12.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dApp.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MathHelper.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +91,12 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MathHelper.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

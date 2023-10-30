@@ -41,7 +41,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -131,8 +131,11 @@
     <ClInclude Include="ComponentArray.hpp" />
     <ClInclude Include="ComponentManager.hpp" />
     <ClInclude Include="Coordinator.hpp" />
+    <ClInclude Include="d3dApp.h" />
+    <ClInclude Include="d3dx12.h" />
     <ClInclude Include="EntityManager.hpp" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="MathHelper.h" />
     <ClInclude Include="System.hpp" />
     <ClInclude Include="Type.hpp" />
     <ClInclude Include="Resource.h" />
@@ -150,10 +153,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PhysicsSystem.hpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="SystemManager.hpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
