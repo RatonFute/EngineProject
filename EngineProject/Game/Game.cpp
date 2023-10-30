@@ -3,6 +3,5 @@
 
 int main()
 {
-    
-    
+	Transform::RotateYaw(2.0f);
 }

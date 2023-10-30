@@ -1,3 +1,4 @@
+#pragma comment(lib,"Engine.lib")
 #include <iostream>
 #include <bitset>
 #include <DirectXMath.h>

@@ -131,8 +131,6 @@
     <ClInclude Include="ComponentArray.hpp" />
     <ClInclude Include="ComponentManager.hpp" />
     <ClInclude Include="Coordinator.hpp" />
-    <ClInclude Include="d3dApp.h" />
-    <ClInclude Include="d3dx12.h" />
     <ClInclude Include="EntityManager.hpp" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MathHelper.h" />
@@ -142,7 +140,6 @@
     <ClInclude Include="RigidBody.hpp" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Transform.hpp" />
-    <ClInclude Include="Vec3.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="EngineProject.rc" />
