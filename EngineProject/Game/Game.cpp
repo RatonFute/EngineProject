@@ -1,7 +1,16 @@
 #include "pch.h"
-#include <iostream>
+
+
+Coordinator coordinator;
 
 int main()
 {
-	Transform::RotateYaw(2.0f);
+	Entity entity = coordinator.CreateEntity();
+	Transform transform;
+	transform.Position = XMVectorSet(0, 0, 0, 0);
+	transform.Position = XMVectorSet(0, 0, 0, 0);
+	transform.Scale = XMVectorSet(1, 1, 1, 0);
+	coordinator.AddComponent(entity, transform);
 }
+
+

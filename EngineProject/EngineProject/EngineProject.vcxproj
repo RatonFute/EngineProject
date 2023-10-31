@@ -28,13 +28,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -47,7 +47,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -128,18 +128,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ComponentArray.hpp" />
-    <ClInclude Include="ComponentManager.hpp" />
-    <ClInclude Include="Coordinator.hpp" />
-    <ClInclude Include="EntityManager.hpp" />
+    <ClInclude Include="ComponentArray.h" />
+    <ClInclude Include="ComponentManager.h" />
+    <ClInclude Include="Coordinator.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MathHelper.h" />
-    <ClInclude Include="System.hpp" />
-    <ClInclude Include="Type.hpp" />
+    <ClInclude Include="System.h" />
+    <ClInclude Include="Type.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="RigidBody.hpp" />
+    <ClInclude Include="RigidBody.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Transform.hpp" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="EngineProject.rc" />
@@ -152,9 +152,9 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
-    <ClCompile Include="PhysicsSystem.hpp" />
+    <ClCompile Include="PhysicsSystem.h" />
     <ClCompile Include="RenderSystem.cpp" />
-    <ClCompile Include="SystemManager.hpp" />
+    <ClCompile Include="SystemManager.h" />
     <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

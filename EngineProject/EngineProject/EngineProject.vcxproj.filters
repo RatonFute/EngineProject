@@ -33,31 +33,31 @@
     <ClInclude Include="Resource.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Type.hpp">
+    <ClInclude Include="Type.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentArray.hpp">
+    <ClInclude Include="ComponentArray.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="System.hpp">
+    <ClInclude Include="System.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="RigidBody.hpp">
+    <ClInclude Include="RigidBody.h">
       <Filter>Fichiers d%27en-tête\Component</Filter>
     </ClInclude>
     <ClInclude Include="MathHelper.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.hpp">
+    <ClInclude Include="Transform.h">
       <Filter>Fichiers d%27en-tête\Component</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentManager.hpp">
+    <ClInclude Include="ComponentManager.h">
       <Filter>Fichiers d%27en-tête\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="EntityManager.hpp">
+    <ClInclude Include="EntityManager.h">
       <Filter>Fichiers d%27en-tête\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="Coordinator.hpp">
+    <ClInclude Include="Coordinator.h">
       <Filter>Fichiers d%27en-tête\Managers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -78,7 +78,7 @@
     <ClCompile Include="Main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="PhysicsSystem.hpp">
+    <ClCompile Include="PhysicsSystem.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
@@ -93,7 +93,7 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Fichiers sources\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="SystemManager.hpp">
+    <ClCompile Include="SystemManager.h">
       <Filter>Fichiers d%27en-tête\Managers</Filter>
     </ClCompile>
   </ItemGroup>
