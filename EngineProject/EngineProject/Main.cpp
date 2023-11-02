@@ -1,7 +1,7 @@
-#include "Coordinator.hpp"
-#include "RigidBody.hpp"
-#include "Transform.hpp"
-#include "PhysicsSystem.hpp"
+#include "Coordinator.h"
+#include "RigidBody.h"
+#include "Transform.h"
+#include "PhysicsSystem.h"
 #include <chrono>
 #include <random>
 #include <DirectXMath.h>

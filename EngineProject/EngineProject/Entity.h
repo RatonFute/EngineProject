@@ -1,38 +1,24 @@
 #include "Type.h"
-#include <array>
+#include <List>
+#include <string>
 #include <cassert>
 #include <unordered_map>
+#include "Component.h"
 class Entity
 {
-	template<typename T>
-	void InsertData(T component)
+	std::string name = "";
+	template<typename Component>
+	void InsertData(Component component)
 	{
-		assert(mEntityToIndexMap.find(entity) == mEntityToIndexMap.end() && "Component added to same entity more than once.");
-
-		size_t newIndex = mSize;
-		mEntityToIndexMap[newIndex] = entity;
-		mIndexToEntityMap[entity] = newIndex;
-		mComponentArray[newIndex] = component;
-		++mSize;
+		mComponentMap.insert(component);
 	}
-	void RemoveData()
+	void RemoveData(Component component)
 	{
-		assert(mEntityToIndexMap.find() != mEntityToIndexMap.end() && "data's entity does not exist");
-		size_t indexOfRemovedEntity = mEntityToIndexMap[entity];
-		size_t indexOfLastEntity = mSize - 1;
-
-		Entity entityOfLastElement = mIndexToEntityMap[indexOfLastEntity];
-		mEntityToIndexMap[entityOfLastElement] = indexOfLastEntity;
-		mIndexToEntityMap[indexOfLastEntity] = entityOfLastElement;
-
-		mEntityToIndexMap.erase();
-		mIndexToEntityMap.erase(indexOfRemovedEntity);
-		--mSize;
+		mComponentMap.remove(component);
 	}
-	T& GetData()
+	Component GetData()
 	{
-		assert(mEntityToIndexMap.find(entity) != mEntityToIndexMap.end() && "data's entity does not exist");
-		return mComponentArray[mEntityToIndexMap[entity]];
+		return mComponentMap;
 	}
 	void EntityDestroyed(Entity entity) override
 	{
@@ -42,8 +28,6 @@ class Entity
 		}
 	}
 private:
-	std::array<T, MAX_ENTITIES> mComponentArray{};
-	std::unordered_map<Entity, size_t> mEntityToIndexMap{};
-	std::unordered_map<size_t, Entity> mIndexToEntityMap{};
-	size_t mSize{};
+
+	std::list<Component> mComponentMap
 };

@@ -1,7 +1,9 @@
 #pragma once
 #include <DirectXMath.h>
+#include "Component.h"
+
 using namespace DirectX;
-class Transform
+class Transform : public Component
 {
 public:
 	XMVECTOR Scale;

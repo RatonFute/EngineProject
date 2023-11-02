@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentArray.h" />
     <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="Coordinator.h" />
