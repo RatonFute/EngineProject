@@ -1,81 +1,130 @@
 #include <Windows.h>
-
-LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
-{
-	switch (msg)
-	{
-	case WM_CLOSE:
-		PostQuitMessage(69);
-		break;
-
-	//case WM_KEYDOWN:
-	//	if (wParam == 'F')
-	//	{
-	//		SetWindowText(hWnd, L"KeyDown");
-	//	}
-	//	break;
-	//}
-	return DefWindowProc(hWnd, msg, wParam, lParam);
-}
+#include "Window.h"
+#include <sstream>
 
 
-int CALLBACK WinMain(
-	HINSTANCE hInstance,
-	HINSTANCE hPrevInstance,
-	LPSTR lpCmdLine,
-	int nCmdShow)
+std::shared_ptr<Render::Window> Render::Window::_instance = nullptr;
+WCHAR WndClassName[MAX_NAME_STRING] = L"EngineWndClass";
 
-{
-	const auto pClassName = L"fenetreDeMerde";
+namespace Render {
+	Window::Window() {
 
-	WNDCLASSEX wc = { sizeof(wc) };
-	wc.style = CS_OWNDC;
-	wc.lpfnWndProc = WndProc;
-	wc.cbClsExtra = 0;
-	wc.cbWndExtra = 0;
-	wc.hInstance = hInstance;
-	wc.hIcon = nullptr;
-	wc.hCursor = nullptr;
-	wc.hbrBackground = nullptr;
-	wc.lpszMenuName = nullptr;
-	wc.lpszClassName = pClassName;
-	wc.hIconSm = nullptr;
-	RegisterClassEx(&wc);
+		wc = {};
+		_instance = nullptr;
 
-	//create window instance
-
-	HWND hWnd = CreateWindowExW(
-		0,
-		pClassName,
-		L"Je vais tout casser",
-		WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,
-		CW_USEDEFAULT,
-		CW_USEDEFAULT,
-		980,
-		720,
-		nullptr, //parent window
-		nullptr, //menus
-		hInstance,
-		nullptr
-	);
-
-	//show the window
-	ShowWindow(hWnd, SW_SHOW);
-
-	//message pump
-	MSG msg;
-	BOOL gResult;
-	while ((gResult = GetMessage(&msg, nullptr,0,0) > 0))
-	{
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
 	}
-	if (gResult == -1)
+
+	Window::~Window() {}
+
+	LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
-		return -1;
+		switch (msg)
+		{
+		case WM_CLOSE:
+			PostQuitMessage(69);
+			break;
+
+		default:
+			return DefWindowProc(hWnd, msg, wParam, lParam);
+		}
+		return 0;
 	}
-	else
+
+	void Window::InitVariables(int width, int height)
 	{
-		return msg.wParam;
+		_winheight = height;
+		_winwidth = width;
+	}
+
+	void Window::CreateWinClass()
+	{
+
+		WNDCLASSEX wc = { sizeof(wc) };
+		wc.style = CS_OWNDC;
+		wc.lpfnWndProc = WndProc;
+		wc.cbClsExtra = 0;
+		wc.cbWndExtra = 0;
+
+		wc.hInstance = HInstance();
+		wc.hIcon = nullptr;
+
+		wc.hCursor = nullptr;
+		wc.hbrBackground = nullptr;
+
+		wc.lpszMenuName = nullptr;
+		wc.lpszClassName = WndClassName;
+
+		wc.hIconSm = nullptr;
+		RegisterClassEx(&wc);
+	}
+
+	HWND Window::CreateGameWin(LPCWSTR name, int width, int height)
+	{
+		HWND returnWin;
+
+		CreateWinClass();
+		InitVariables(width, height);
+		returnWin = InitWin(name);
+		MessageLoop();
+		return returnWin;
+	}
+
+	HWND Window::InitWin(LPCWSTR name)
+	{
+		HWND hWnd = CreateWindow(
+
+			WndClassName, name,
+			WS_OVERLAPPEDWINDOW,
+			CW_USEDEFAULT,
+			CW_USEDEFAULT,
+			_winwidth,
+			_winheight,
+			nullptr, //parent window
+			nullptr, //menus
+			HInstance(),
+			this,
+
+			);
+		if (!hWnd)
+		{
+			MessageBox(NULL, L"CreateWindow Failed!", L"Error", NULL);
+			PostQuitMessage(0);
+		}
+		//show the window
+		ShowWindow(hWnd, SW_SHOW);
+		return hWnd;
+	}
+
+	void Window::MessageLoop()
+	{
+		MSG msg = { 0 };
+
+		if (msg.message == WM_QUIT)
+		{
+			Close = true;
+		}
+
+		while (msg.message != WM_QUIT)
+		{
+			if (Close == true)
+			{
+				return;
+			}
+			while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg); //send msg to WndProc
+			}
+		}
+	}
+
+	std::shared_ptr<Render::Window> Render::Window::getInstance()
+	{
+		if (_instance == nullptr)
+		{
+			std::shared_ptr<Render::Window> ptr(new Render::Window);
+			_instance = ptr;
+		}
+		return _instance;
 	}
 }

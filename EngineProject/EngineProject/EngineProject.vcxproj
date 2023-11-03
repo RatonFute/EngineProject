@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -118,6 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -127,6 +129,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\Camera.h" />
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dApp.h" />
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dUtil.h" />
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dx12.h" />
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\DDSTextureLoader.h" />
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\GameTimer.h" />
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\GeometryGenerator.h" />
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\MathHelper.h" />
+    <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\UploadBuffer.h" />
+    <ClInclude Include="Engine.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mouse.h" />
@@ -134,6 +146,7 @@
     <ClInclude Include="RigidBody.hpp" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Transform.hpp" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="EngineProject.rc" />
@@ -143,10 +156,17 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\Camera.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dApp.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dUtil.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\DDSTextureLoader.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\GameTimer.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\GeometryGenerator.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\MathHelper.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mouse.cpp" />
-    <ClCompile Include="window.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
