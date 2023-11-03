@@ -7,27 +7,36 @@
 class Entity
 {
 	std::string name = "";
-	template<typename Component>
-	void InsertData(Component component)
+	void AddComponent(Component component)
 	{
-		mComponentMap.insert(component);
+		size_t newIndex = mSize;
+		mIndexToComponent[newIndex] = component;
+		mComponentToIndex[component] = newIndex;
+		++mSize;
 	}
-	void RemoveData(Component component)
+	void RemoveComponent(Component component)
 	{
-		mComponentMap.remove(component);
+		size_t indexOfRemovedComponent = mComponentToIndex[component];
+		size_t indexOfLastComponent = mSize - 1;
+
+		Component componentOfLastElement = mIndexToComponent[indexOfLastComponent];
+		mComponentToIndex[componentOfLastElement] = indexOfLastComponent;
+		mIndexToComponent[indexOfLastComponent] = componentOfLastElement;
+		mIndexToComponent.erase(mComponentToIndex[component]);
+		mComponentToIndex.erase(component);
+		--mSize;
 	}
-	Component GetData()
+	Component GetComponents(Component component)
 	{
-		return mComponentMap;
+		return mIndexToComponent[mComponentToIndex[component]];
 	}
-	void EntityDestroyed(Entity entity) override
+	void DestroyedEntity()
 	{
-		if (mEntityToIndexMap.find(entity) != mEntityToIndexMap.end())
-		{
-			RemoveData(entity);
-		}
+		
 	}
 private:
 
-	std::list<Component> mComponentMap
+	std::unordered_map<Component, size_t> mComponentToIndex;
+	std::unordered_map<size_t, Component> mIndexToComponent;
+	size_t mSize{};
 };
