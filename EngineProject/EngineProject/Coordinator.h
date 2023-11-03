@@ -1,5 +1,5 @@
 #pragma once
-#include "ComponentManager.h"
+
 #include "EntityManager.h"
 #include "SystemManager.h"
 
@@ -8,7 +8,6 @@ class Coordinator
 public:
 	void Init()
 	{
-		mComponentManager = std::make_unique<ComponentManager>();
 		mEntityManager = std::make_unique<EntityManager>();
 		mSystemManager = std::make_unique<SystemManager>();
 	}

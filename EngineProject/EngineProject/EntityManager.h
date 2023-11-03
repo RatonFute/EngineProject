@@ -7,23 +7,39 @@
 
 class EntityManager {
 public:
-	Entity CreatEntity()
+	void CreateEntity()
 	{
-		assert(LivingEntityCount < MAX_COMPONENTS && "too many entities");
+		size_t newIndex = mSize;
 		Entity entity;
-		Entities.push(entity);
-		LivingEntityCount++;
-		return entity;
+		mIndexToEntity[newIndex] = entity;
+		mEntityToIndex[entity] = newIndex;
+		++mSize;
 	}
-	Entity DestroyEntity(Entity entity) 
+	void DestroyEntity(Entity entity)
 	{
+		size_t indexOfRemovedEntity = mEntityToIndex[entity];
+		size_t indexOfLastEntity = mSize - 1;
 
-		Entities.
-			--LivingEntityCount;
+		Entity EntityOfLastElement = mIndexToEntity[indexOfRemovedEntity];
+		mEntityToIndex[EntityOfLastElement] = indexOfLastEntity;
+		mIndexToEntity[indexOfLastEntity] = EntityOfLastElement;
+		mIndexToEntity.erase(mEntityToIndex[entity]);
+		mEntityToIndex.erase(entity);
+		--mSize;
+	}
+	std::list<Entity> GetEntityByTag(int tag) 
+	{
+		std::list<Entity> entities;
+		for (int i = 0; i < mIndexToEntity.bucket_count(); i++)
+		{
+			if (mIndexToEntity[i].tag == tag) entities.push_back(mIndexToEntity[i]);
+		}
+		return entities;
 	}
 private:
 
-	array<Entity> Entities{};
-	uint32_t LivingEntityCount{};
+	std::unordered_map<Entity, size_t> mEntityToIndex;
+	std::unordered_map<size_t, Entity> mIndexToEntity;
+	size_t mSize{};
 };
 

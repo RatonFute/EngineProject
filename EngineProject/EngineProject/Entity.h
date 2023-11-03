@@ -6,7 +6,9 @@
 #include "Component.h"
 class Entity
 {
+public:
 	std::string name = "";
+	int tag = 0;
 	void AddComponent(Component component)
 	{
 		size_t newIndex = mSize;
