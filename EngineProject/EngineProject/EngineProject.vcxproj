@@ -149,7 +149,6 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PhysicsSystem.h" />

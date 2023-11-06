@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
-#include "Type.hpp"
+#include "Type.h"
 #include <unordered_map>
-#include "System.hpp"
+#include "System.h"
 
 class SystemManager
 {

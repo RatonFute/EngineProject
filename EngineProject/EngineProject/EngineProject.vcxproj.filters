@@ -75,9 +75,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="PhysicsSystem.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>

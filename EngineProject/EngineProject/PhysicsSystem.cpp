@@ -1,7 +1,7 @@
-#include "PhysicsSystem.hpp"
-#include "RigidBody.hpp"
-#include "Transform.hpp"
-#include "Coordinator.hpp"
+#include "PhysicsSystem.h"
+#include "RigidBody.h"
+#include "Transform.h"
+#include "Coordinator.h"
 
 
 extern Coordinator gCoordinator;
