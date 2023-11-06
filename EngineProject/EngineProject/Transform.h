@@ -1,18 +1,22 @@
 #pragma once
 #include <DirectXMath.h>
+#include <unordered_map>
+#include "IComponent.h"
 using namespace DirectX;
-class Transform
+class Transform : public IComponent
 {
 public:
 	XMVECTOR Scale;
 	XMVECTOR Position;
 	XMVECTOR Rotation;
-
+	void AddEntity(int entityId, Transform* transform);
+	void SetPostion(int x, int y, int z);
 	void UpdateMatrix();
 	void Rotate(float yaw, float pitch, float roll);
 	void RotateYaw(float yaw);
 	void RotatePitch(float pitch);
 	void RotateRoll(float roll);
+	std::unordered_map<int, Transform*> GetComponents();
 private:
 	float m_xPos, m_yPos, m_zPos, m_roll, m_pitch, m_yaw = 0;
 	float m_xScale, m_yScale, m_zScale = 1;
@@ -23,4 +27,6 @@ private:
 
 	XMMATRIX m_mRot;
 	XMMATRIX m_matrix;
+	int _entityId;
+	std::unordered_map<int, Transform*> _entitiesTransform;
 };

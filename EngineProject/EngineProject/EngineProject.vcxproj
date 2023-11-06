@@ -128,14 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ComponentArray.h" />
-    <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="Coordinator.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MathHelper.h" />
     <ClInclude Include="System.h" />
-    <ClInclude Include="Type.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="targetver.h" />
@@ -149,6 +147,8 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="IComponent.h" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PhysicsSystem.h" />

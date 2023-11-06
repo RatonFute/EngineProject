@@ -1,11 +1,14 @@
 #pragma once
 
-#include "Type.h"
+#include "Entity.h"
 #include <set>
 
+namespace Engine {
 
-class System
-{
-public:
-	std::set<Entity> mEntities;
-};
+	class System
+	{
+	public:
+		std::set<Entity> mEntities;
+	};
+}
+

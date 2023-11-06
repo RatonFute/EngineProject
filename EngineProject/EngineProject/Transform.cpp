@@ -1,5 +1,11 @@
 #include "Transform.h"
 
+void Transform::AddEntity(int entityid, Transform* transform)
+{
+	_entityId = entityid;
+	_entitiesTransform[_entityId] = transform;
+}
+
 void Transform::UpdateMatrix() 
 {
 
@@ -39,6 +45,14 @@ void Transform::UpdateMatrix()
 
 }
 
+void Transform::SetPostion(int x, int y, int z)
+{
+	m_xPos = x;
+	m_yPos = y;
+	m_zPos = z;
+	Position = XMVectorSet(m_xPos, m_yPos, m_zPos,0);
+}
+
 void Transform::Rotate(float yaw, float pitch, float roll)
 {
 	m_yaw = yaw;
@@ -56,4 +70,8 @@ void Transform::RotatePitch(float pitch)
 void Transform::RotateRoll(float roll)
 {
 	m_roll = roll;
+}
+std::unordered_map<int, Transform*> Transform::GetComponents()
+{
+	return _entitiesTransform;
 }
