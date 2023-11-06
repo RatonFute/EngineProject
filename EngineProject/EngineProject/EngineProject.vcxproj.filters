@@ -48,9 +48,6 @@
     <ClInclude Include="EntityManager.h">
       <Filter>Fichiers d%27en-tête\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="Coordinator.h">
-      <Filter>Fichiers d%27en-tête\Managers</Filter>
-    </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -92,6 +89,12 @@
     </ClCompile>
     <ClCompile Include="IComponent.h">
       <Filter>Fichiers d%27en-tête\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

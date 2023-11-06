@@ -5,10 +5,5 @@
 
 class EntityManager {
 public:
-	Entity CreatEntity(std::string name)
-	{
-		Entity entity = Entity(name);
-		entity.AddComponent<Transform>();
-		return entity;
-	}
+	Entity CreatEntity(std::string name);
 };

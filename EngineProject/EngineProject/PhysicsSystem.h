@@ -1,7 +1,7 @@
 #pragma once
 #include "System.h"
 
-class PhysicsSystem
+class PhysicsSystem : public System
 {
 public: 
 	void Init();

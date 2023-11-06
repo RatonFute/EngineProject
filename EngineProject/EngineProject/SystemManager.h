@@ -20,5 +20,5 @@ public:
 	
 private:
 	// Map from system type string pointer to a system pointer
-	std::unordered_map<const char*, std::shared_ptr<Engine::System>> mSystems{};
+	std::unordered_map<const char*, std::shared_ptr<System>> mSystems{};
 };
