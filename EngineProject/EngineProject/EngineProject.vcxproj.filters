@@ -13,70 +13,64 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Fichiers de ressources\Fichiers d%27en-tête\header">
-      <UniqueIdentifier>{611b1596-bd76-4622-b83d-8e048694290f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\src">
-      <UniqueIdentifier>{d6e2a60c-20b9-42d9-858b-a113a02f671d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\Camera.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dApp.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dUtil.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dx12.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\DDSTextureLoader.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Engine.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\GameTimer.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\GeometryGenerator.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="GUI.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Keyboard.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\MathHelper.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Mouse.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="RigidBody.hpp">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Transform.hpp">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\UploadBuffer.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
-      <Filter>Fichiers de ressources\Fichiers d%27en-tête\header</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -94,37 +88,37 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\Camera.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dApp.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\d3dUtil.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\DDSTextureLoader.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\GameTimer.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\GeometryGenerator.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Keyboard.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Fichiers sources\src</Filter>
+    <ClCompile Include="WindowMain.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\OneDrive\Documents\GitHub\EngineProject\EngineProject\EngineProject\Common\MathHelper.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Mouse.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Window.cpp">
-      <Filter>Fichiers sources\src</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

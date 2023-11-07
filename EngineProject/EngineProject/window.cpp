@@ -2,7 +2,6 @@
 #include "Window.h"
 #include <sstream>
 
-Mouse mouse;
 std::shared_ptr<Window> Window::_instance = nullptr;
 WCHAR WndClassName[MAX_NAME_STRING] = L"EngineWndClass";
 
@@ -10,7 +9,7 @@ WCHAR WndClassName[MAX_NAME_STRING] = L"EngineWndClass";
 
 		wc = {};
 		_instance = nullptr;
-
+		Close = false;
 	}
 
 	Window::~Window() {}
@@ -23,13 +22,13 @@ WCHAR WndClassName[MAX_NAME_STRING] = L"EngineWndClass";
 			PostQuitMessage(69);
 			break;
 
-		case WM_MOUSEMOVE:
-		{
-			int x = LOWORD(lParam);
-			int y = HIWORD(lParam);
-			mouse.onMouseMove(x, y);
-			return 0;
-		}
+		//case WM_MOUSEMOVE:
+		//{
+		//	int x = LOWORD(lParam);
+		//	int y = HIWORD(lParam);
+		//	mouse.onMouseMove(x, y);
+		//	return 0;
+		//}
 		default:
 			return DefWindowProc(hWnd, msg, wParam, lParam);
 		}
