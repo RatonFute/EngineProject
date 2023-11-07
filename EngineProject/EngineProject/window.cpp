@@ -2,11 +2,10 @@
 #include "Window.h"
 #include <sstream>
 
-
-std::shared_ptr<Render::Window> Render::Window::_instance = nullptr;
+Mouse mouse;
+std::shared_ptr<Window> Window::_instance = nullptr;
 WCHAR WndClassName[MAX_NAME_STRING] = L"EngineWndClass";
 
-namespace Render {
 	Window::Window() {
 
 		wc = {};
@@ -24,6 +23,13 @@ namespace Render {
 			PostQuitMessage(69);
 			break;
 
+		case WM_MOUSEMOVE:
+		{
+			int x = LOWORD(lParam);
+			int y = HIWORD(lParam);
+			mouse.onMouseMove(x, y);
+			return 0;
+		}
 		default:
 			return DefWindowProc(hWnd, msg, wParam, lParam);
 		}
@@ -118,13 +124,13 @@ namespace Render {
 		}
 	}
 
-	std::shared_ptr<Render::Window> Render::Window::getInstance()
+	std::shared_ptr<Window> Window::getInstance()
 	{
 		if (_instance == nullptr)
 		{
-			std::shared_ptr<Render::Window> ptr(new Render::Window);
+			std::shared_ptr<Window> ptr(new Window);
 			_instance = ptr;
 		}
 		return _instance;
 	}
-}
+

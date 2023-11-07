@@ -29,5 +29,4 @@ namespace Engine
 	{
 		return (mKeyStates[vKeyCode] == KeyState::Press);
 	}
-
 }
